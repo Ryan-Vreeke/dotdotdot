@@ -2,7 +2,7 @@
 Linux Dot Files and other config
 
 # Installs
-    `sudo pacman -S zsh neofetch lazygit dotnet-sdk dotnet-runtime aspnet-runtime kitty`
+    `sudo pacman -S zsh neofetch lazygit dotnet-sdk dotnet-runtime aspnet-runtime kitty ani-cli`
 
 ## Git
 ### Oh My Zsh
