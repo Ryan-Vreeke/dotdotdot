@@ -12,6 +12,20 @@ Linux Dot Files and other config
 ## Git
 1. `git config --global credential.helper store`
 
+## Virt QEMU/KVM
+1. `sudo pacman -Syy qemu-full virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptables`
+2. `sudo systemctl enable libvirtd.service`
+3. `sudo systemctl start libvirtd.service`
+4. `sudo nvim /etc/libvirt/libvirtd.conf`
+5. Naviagate ot around line 85 and uncomment the following lines:
+- `unix_sock_group = "libvirt"`
+- `unix_sock_rw_perms = "0770"`
+6. add user to libvirt group
+- `sudo usermod -G libvirt -a 'whoami'`
+- `newgrp libvirt`
+7. Restart libvirt daemon: `sudo systemctl restart libvirtd.service`
+8. `sudo virsh net-autostart default`
+
 ## Oh My Zsh
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
