@@ -25,4 +25,4 @@ Linux Dot Files and other config
 		ln -s ~/.config/kitty/kitty-themes/themes/Afterglow.conf ~/.config/kitty/theme.conf
 		
 3.
-		echo "include ./theme.conf" > ~/.config/kitty/kitty.config
+		echo "include ./theme.conf" > ~/.config/kitty/kitty.conf
