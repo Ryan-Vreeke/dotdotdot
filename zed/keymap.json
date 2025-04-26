@@ -1,0 +1,92 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && vim_operator == none && !VimWaiting",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      "space t": "workspace::ToggleBottomDock",
+      "space /": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": false
+        }
+      ],
+      "space q .": "diagnostics::Deploy",
+      "g l": "vim::SelectNext",
+      "g L": "vim::SelectPrevious",
+      "g a": "editor::SelectAllMatches",
+      "g shift-a": "editor::FindAllReferences",
+      "g f": "project_symbols::Toggle"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "escape": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "space g h d": "editor::ToggleSelectedDiffHunks",
+      "space g h r": "git::Restore"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-n": "workspace::NewTerminal",
+      "ctrl-d": "pane::CloseActiveItem",
+      "ctrl-t": "workspace::ToggleBottomDock",
+      "ctrl-shift-f": "workspace::ToggleZoom",
+      "escape": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // Buffers
+      "s v": "pane::SplitRight",
+      "s s": "pane::SplitDown",
+      "s l": "workspace::ActivatePaneRight",
+      "s h": "workspace::ActivatePaneLeft",
+      "s k": "workspace::ActivatePaneUp",
+      "s j": "workspace::ActivatePaneDown",
+      "space h": "pane::ActivatePreviousItem",
+      "space l": "pane::ActivateNextItem",
+      "space c": "pane::CloseActiveItem",
+      "space p f": "file_finder::Toggle",
+      "space p s": "pane::DeploySearch",
+      "space f": "editor::Format",
+      "space m": "tab_switcher::Toggle",
+      "ctrl-w l": "workspace::ToggleRightDock",
+      "ctrl-w h": "workspace::ToggleLeftDock",
+
+      // Error navigation
+      "] e": "editor::GoToDiagnostic",
+      "[ e": "editor::GoToPreviousDiagnostic",
+
+      // Git
+      "] h": "editor::GoToHunk",
+      "[ h": "editor::GoToPreviousHunk"
+    }
+  }
+]
