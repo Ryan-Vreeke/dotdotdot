@@ -1,20 +1,20 @@
 #!/bin/bash
 
 # List of config folders to copy
-FOLDERS=("hypr" "waybar" "hyprlock" "swaync" "zed")
+FOLDERS=("hypr" "waybar" "hyprlock" "swaync" "zed" "wlogout" "kitty")
 
 # Loop through each folder
 for folder in "${FOLDERS[@]}"; do
     # Delete local folder if it exists
     if [ -d "./$folder" ]; then
-        echo "Deleting ./$folder"
-        rm -rf "./$folder"
+        echo "Deleting $folder"
+        rm -rf "./configs/$folder"
     fi
 
     # Copy from ~/.config to current directory
     if [ -d "$HOME/.config/$folder" ]; then
-        echo "Copying $HOME/.config/$folder to ./"
-        cp -r "$HOME/.config/$folder" ./
+        echo "Copying $HOME/.config/$folder to ./configs/"
+        cp -r "$HOME/.config/$folder" ./configs/
     else
         echo "Warning: $HOME/.config/$folder does not exist"
     fi
