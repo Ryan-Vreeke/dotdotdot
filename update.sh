@@ -2,6 +2,7 @@
 
 # List of config folders to copy
 FOLDERS=("hypr" "waybar" "hyprlock" "swaync" "zed" "wlogout" "kitty")
+OTHER_FOLDERS=("$HOME/.local/share/rofi/")
 
 # Loop through each folder
 for folder in "${FOLDERS[@]}"; do
@@ -18,6 +19,14 @@ for folder in "${FOLDERS[@]}"; do
     else
         echo "Warning: $HOME/.config/$folder does not exist"
     fi
+done
+
+echo "Deleting Share"
+rm -rf "./share/*"
+
+for folder in "${OTHER_FOLDERS[@]}"; do
+    echo "Copying $folder to ./share/"
+    cp -r "$folder" ./share/
 done
 
 echo "Done."

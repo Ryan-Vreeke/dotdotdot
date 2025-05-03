@@ -25,7 +25,7 @@
             "escape": true
         },
         "clock": {
-            "format": "{:%I:%M:%S %p} ",
+            "format": "{:%I:%M %p} ",
             "interval": 1,   
             "tooltip-format": "<tt>{calendar}</tt>",
             "calendar": {
@@ -81,8 +81,8 @@
         },
         "custom/pacman": {
             "format": "󰅢 {}",
-            "interval": 30,   
-            "exec": "checkupdates | wc -l",
+            "interval": 3600,   
+            "exec": "yay -Syy & yay -Qu | wc -l",
             "exec-if": "exit 0",
             "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
             "signal": 8,
@@ -122,6 +122,7 @@
         },
         "temperature": {
             "critical-threshold": 80,
+	    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
             "format": "",
         },
         "tray": {
