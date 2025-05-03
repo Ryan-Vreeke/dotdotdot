@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # List of config folders to copy
-FOLDERS=("hypr" "waybar" "hyprlock" "swaync" "zed" "wlogout" "kitty")
+FOLDERS=("hypr" "waybar" "hyprlock" "swaync" "zed" "wlogout" "kitty" "rofi")
 OTHER_FOLDERS=("$HOME/.local/share/rofi/")
 
 # Loop through each folder
