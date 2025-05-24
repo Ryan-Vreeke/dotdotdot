@@ -1,0 +1,19 @@
+BasedOnStyle: Google
+
+IndentWidth: 2
+ColumnLimit: 100
+AllowShortFunctionsOnASingleLine: Inline
+DerivePointerAlignment: false
+PointerAlignment: Left
+SortIncludes: true
+IncludeBlocks: Preserve
+
+
+BinPackArguments: false
+AllowAllArgumentsOnNextLine: false
+
+# You can add or remove specific rules below if you want further customization
+# For example:
+# BreakBeforeBraces: Attach
+# SpacesInParentheses: false
+# SpaceAfterCStyleCast: true
